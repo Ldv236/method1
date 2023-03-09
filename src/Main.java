@@ -14,7 +14,7 @@ public class Main {
         System.out.println("Задача 2");
         int osVer = 1;
         int yearPhone = 2022;
-        switch (chooseOsVersion(osVer, yearPhone)) {
+        switch (chooseAppVersion(osVer, yearPhone)) {
             case 1:
                 System.out.println("Установите облегченную версию для iOS");
                 break;
@@ -49,7 +49,7 @@ public class Main {
         } else return checkYear % 4 == 0;
     }
 
-    public static int chooseOsVersion(int clientOS, int year) {
+    public static int chooseAppVersion(int clientOS, int year) {
         if (clientOS == 0) {
             if (year < LocalDate.now().getYear()) {
                 return 1; //ios lite
@@ -69,11 +69,11 @@ public class Main {
     public static int calculateDeliveryTime(int km) {
         int timeToDelivery = 0;
 
-        if (km < 20) {
+        if (km <= 20) {
             return timeToDelivery + 1;
-        } else if (km < 60) {
+        } else if (km <= 60) {
             return timeToDelivery + 2;
-        } else if (km < 100) {
+        } else if (km <= 100) {
             return timeToDelivery + 3;
         } else return 0;
     }
